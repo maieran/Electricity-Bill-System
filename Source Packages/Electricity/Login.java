@@ -1,3 +1,4 @@
+/*
 package Electricity;
 
 import java.awt.*;
@@ -118,4 +119,4 @@ public class Login extends JFrame implements ActionListener{
     }
 
 
-}   }
+}*/
