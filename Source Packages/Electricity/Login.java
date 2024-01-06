@@ -1,4 +1,4 @@
-/*
+
 package Electricity;
 
 import java.awt.*;
@@ -42,30 +42,34 @@ public class Login extends JFrame implements ActionListener{
         c1.setBounds(400, 100, 150, 20);
         add(c1);
 
-        ImageIcon ic1 = new ImageIcon(ClassLoader.getSystemResource("icon/login.png"));
+        String systemDirectory = System.getProperty("user.dir");
+        System.out.println(systemDirectory);
+
+        ImageIcon ic1 = new ImageIcon("icon/login.png");
         Image i1 = ic1.getImage().getScaledInstance(16, 16,Image.SCALE_DEFAULT);
         b1 = new JButton("Login", new ImageIcon(i1));
         b1.setBounds(330, 160, 100, 20);
         add(b1);
 
-        ImageIcon ic2 = new ImageIcon(ClassLoader.getSystemResource("icon/cancel.jpg"));
+        ImageIcon ic2 = new ImageIcon("icon/cancel.jpg");
         Image i2 = ic2.getImage().getScaledInstance(16, 16,Image.SCALE_DEFAULT);
         b2 = new JButton("Cancel",new ImageIcon(i2));
         b2.setBounds(450, 160, 100, 20);
         add(b2);
 
-        ImageIcon ic4 = new ImageIcon(ClassLoader.getSystemResource("icon/signup.png"));
+        ImageIcon ic4 = new ImageIcon("icon/signup.png");
         Image i4 = ic4.getImage().getScaledInstance(16, 16,Image.SCALE_DEFAULT);
         b3 = new JButton("Signup",new ImageIcon(i4));
         b3.setBounds(380, 200, 130, 20);
         add(b3);
+
 
         b1.addActionListener(this);
         b2.addActionListener(this);
         b3.addActionListener(this);
 
 
-        ImageIcon ic3 = new ImageIcon(ClassLoader.getSystemResource("icon/second.jpg"));
+        ImageIcon ic3 = new ImageIcon("icon/second.jpg");
         Image i3 = ic3.getImage().getScaledInstance(250, 250,Image.SCALE_DEFAULT);
         ImageIcon icc3 = new ImageIcon(i3);
         l3 = new JLabel(icc3);
@@ -74,12 +78,9 @@ public class Login extends JFrame implements ActionListener{
 
         setLayout(new BorderLayout());
 
-
         setSize(640,300);
         setLocation(600,300);
         setVisible(true);
-
-
 
     }
     public void actionPerformed(ActionEvent ae){
@@ -119,4 +120,4 @@ public class Login extends JFrame implements ActionListener{
     }
 
 
-}*/
+}
