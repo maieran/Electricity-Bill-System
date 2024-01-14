@@ -98,15 +98,15 @@ public class Signup extends JFrame implements ActionListener {
         });
 
         b1 = new JButton("Create");
-        b1.setBackground(Color.GREEN);
-        b1.setForeground(Color.WHITE);
+        //b1.setBackground(Color.GREEN);
+        b1.setForeground(Color.BLACK);
         b1.setBounds(140, 290, 120, 30);
         b1.addActionListener(this);
         p1.add(b1);
 
         b2 = new JButton("Back");
-        b2.setBackground(Color.RED);
-        b2.setForeground(Color.WHITE);
+        //b2.setBackground(Color.RED);
+        b2.setForeground(Color.BLACK);
         b2.setBounds(300, 290, 120, 30);
         b2.addActionListener(this);
         p1.add(b2);
