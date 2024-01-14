@@ -2,6 +2,7 @@ package Electricity;
 
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicArrowButton;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -91,11 +92,8 @@ public class NewCustomer extends JFrame implements ActionListener {
         b2 = new JButton("Cancel");
         b2.setBounds(250, 390,100,25);
 
-        b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.WHITE);
-
-        b2.setBackground(Color.BLACK);
-        b2.setForeground(Color.WHITE);
+        b1.setForeground(Color.BLACK);
+        b2.setForeground(Color.BLACK);
 
         panel.add(b1);
         panel.add(b2);
