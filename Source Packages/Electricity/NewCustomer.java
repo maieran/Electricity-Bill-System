@@ -130,7 +130,7 @@ public class NewCustomer extends JFrame implements ActionListener {
             String phone = t7.getText();
 
             String stmnt1 = "insert into customer value ('"+name+"', '"+meter+"', '"+address+"','"+city+"', '"+state+"', '"+email+"','"+phone+"')";
-            String stmnt2 = "insert into login values ('"+meter+"', '', '', '')";
+            String stmnt2 = "insert into login values('"+meter+"', '', '', '', '')";
 
             try {
                 Conn c1 = new Conn();
