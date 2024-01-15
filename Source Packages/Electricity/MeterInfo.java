@@ -96,11 +96,11 @@ public class MeterInfo extends JFrame implements ActionListener {
         b2 = new JButton("Cancel");
         b2.setBounds(250, 390, 100, 25);
 
-        b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.WHITE);
+        //b1.setBackground(Color.BLACK);
+        b1.setForeground(Color.BLACK);
 
-        b2.setBackground(Color.BLACK);
-        b2.setForeground(Color.WHITE);
+        //b2.setBackground(Color.BLACK);
+        b2.setForeground(Color.BLACK);
 
         panel.add(b1);
         panel.add(b2);
@@ -108,7 +108,7 @@ public class MeterInfo extends JFrame implements ActionListener {
 
         add(panel,"Center");
 
-        ImageIcon ic1 = new ImageIcon(ClassLoader.getSystemResource("icon/hicon1.jpg"));
+        ImageIcon ic1 = new ImageIcon("icon/hicon1.jpg");
         Image i3 = ic1.getImage().getScaledInstance(150, 300,Image.SCALE_DEFAULT);
         ImageIcon ic2 = new ImageIcon(i3);
         l8 = new JLabel(ic2);
