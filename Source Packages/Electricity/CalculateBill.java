@@ -39,7 +39,7 @@ public class CalculateBill extends JFrame implements ActionListener{
         c1.setBounds(200, 70, 180, 20);
         try{
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from customer");
+            ResultSet rs = c.statement.executeQuery("select * from customer");
             while(rs.next()){
                 c1.add(rs.getString("meter"));
             }
@@ -55,7 +55,7 @@ public class CalculateBill extends JFrame implements ActionListener{
 
         try{
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from customer where meter = '"+c1.getSelectedItem()+"'");
+            ResultSet rs = c.statement.executeQuery("select * from customer where meter = '"+c1.getSelectedItem()+"'");
             while(rs.next()){
                 l11.setText(rs.getString("name"));
                 l12.setText(rs.getString("address"));
@@ -66,7 +66,7 @@ public class CalculateBill extends JFrame implements ActionListener{
             public void itemStateChanged(ItemEvent ae){
                 try{
                     Conn c = new Conn();
-                    ResultSet rs = c.s.executeQuery("select * from customer where meter = '"+c1.getSelectedItem()+"'");
+                    ResultSet rs = c.statement.executeQuery("select * from customer where meter = '"+c1.getSelectedItem()+"'");
                     while(rs.next()){
                         l11.setText(rs.getString("name"));
                         l12.setText(rs.getString("address"));
@@ -154,7 +154,7 @@ public class CalculateBill extends JFrame implements ActionListener{
             int total_bill = 0;
             try{
                 Conn c = new Conn();
-                ResultSet rs = c.s.executeQuery("select * from tax");
+                ResultSet rs = c.statement.executeQuery("select * from tax");
                 while(rs.next()){
                     total_bill = units_consumed * Integer.parseInt(rs.getString("cost_per_unit")); // 120 * 9
                     total_bill += Integer.parseInt(rs.getString("meter_rent"));
@@ -169,7 +169,7 @@ public class CalculateBill extends JFrame implements ActionListener{
 
             try{
                 Conn c1 = new Conn();
-                c1.s.executeUpdate(q);
+                c1.statement.executeUpdate(q);
                 JOptionPane.showMessageDialog(null,"Customer Bill Updated Successfully");
                 this.setVisible(false);
             }catch(Exception aee){

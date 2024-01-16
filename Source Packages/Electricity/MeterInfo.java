@@ -5,7 +5,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.jar.JarEntry;
 
 public class MeterInfo extends JFrame implements ActionListener {
     JLabel l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11;
@@ -137,7 +136,7 @@ public class MeterInfo extends JFrame implements ActionListener {
             String q1 = "insert into meter_info values('"+meter_number+"','"+meter_location+"','"+meter_type+"','"+phase_code+"','"+bill_type+"','"+days+"')";
             try{
                 Conn c1 = new Conn();
-                c1.s.executeUpdate(q1);
+                c1.statement.executeUpdate(q1);
                 JOptionPane.showMessageDialog(null,"Meter Info Added Successfully");
                 this.setVisible(false);
 

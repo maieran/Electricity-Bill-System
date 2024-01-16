@@ -1,6 +1,5 @@
 package Electricity;
 
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
@@ -20,7 +19,7 @@ public class CustomerDetails extends JFrame implements ActionListener{
         try{
             Conn c1  = new Conn();
             String s1 = "select * from customer";
-            ResultSet rs  = c1.s.executeQuery(s1);
+            ResultSet rs  = c1.statement.executeQuery(s1);
             while(rs.next()){
                 y[i][j++]=rs.getString("name");
                 y[i][j++]=rs.getString("meter");

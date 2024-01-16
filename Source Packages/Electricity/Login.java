@@ -86,12 +86,12 @@ public class Login extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource() == b1){
             try{
-                Conn c = new Conn();
+                Conn conn = new Conn();
                 String a  = tf1.getText();
                 String b  = pf2.getText();
                 String user = c1.getSelectedItem();
                 String q  = "select * from login where username = '"+a+"' and password = '"+b+"' and user = '"+user+"'";
-                ResultSet rs = c.s.executeQuery(q);
+                ResultSet rs = conn.statement.executeQuery(q); //connection.statement.executeQuery(query);
                 if(rs.next()){
                     String meter = rs.getString("meter_no");
                     new Project(meter, user).setVisible(true);
@@ -105,6 +105,8 @@ public class Login extends JFrame implements ActionListener{
             }catch(Exception e){
                 e.printStackTrace();
                 System.out.println("error: "+e);
+                JOptionPane.showMessageDialog(null, "Either the account does not exists or the password is wrong. \n"
+                        + "Try again!");
             }
         }else if(ae.getSource() == b2){
             this.setVisible(false);

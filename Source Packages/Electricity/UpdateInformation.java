@@ -95,7 +95,7 @@ public class UpdateInformation extends JFrame implements ActionListener{
 
         try{
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from customer where meter = '"+meter+"'");
+            ResultSet rs = c.statement.executeQuery("select * from customer where meter = '"+meter+"'");
             while(rs.next()){
                 l11.setText(rs.getString(1));
                 l12.setText(rs.getString(2));
@@ -128,7 +128,7 @@ public class UpdateInformation extends JFrame implements ActionListener{
 
             try{
                 Conn c = new Conn();
-                c.s.executeUpdate("update customer set address = '"+s3+"', city = '"+s4+"', state = '"+s5+"', email = '"+s6+"', phone = '"+s7+"' where meter = '"+meter+"'");
+                c.statement.executeUpdate("update customer set address = '"+s3+"', city = '"+s4+"', state = '"+s5+"', email = '"+s6+"', phone = '"+s7+"' where meter = '"+meter+"'");
                 JOptionPane.showMessageDialog(null, "Details Updated Successfully");
                 this.setVisible(false);
 

@@ -41,12 +41,12 @@ public class DepositDetails extends JFrame implements ActionListener{
         try{
             Conn c  = new Conn();
             String s1 = "select * from bill";
-            ResultSet rs  = c.s.executeQuery(s1);
+            ResultSet rs  = c.statement.executeQuery(s1);
 
             t1.setModel(DbUtils.resultSetToTableModel(rs));
 
             String str2 = "select * from customer";
-            rs = c.s.executeQuery(str2);
+            rs = c.statement.executeQuery(str2);
             while(rs.next()){
                 c1.add(rs.getString("meter"));
             }
@@ -96,7 +96,7 @@ public class DepositDetails extends JFrame implements ActionListener{
             String str = "select * from bill where meter = '"+c1.getSelectedItem()+"' AND month = '"+c2.getSelectedItem()+"'";
             try{
                 Conn c = new Conn();
-                ResultSet rs = c.s.executeQuery(str);
+                ResultSet rs = c.statement.executeQuery(str);
                 t1.setModel(DbUtils.resultSetToTableModel(rs));
             }catch(Exception e){}
         }else if(ae.getSource() == b2){

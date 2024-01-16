@@ -2,13 +2,11 @@ package Electricity;
 
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicArrowButton;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.Random;
-import java.util.jar.JarEntry;
 
 public class NewCustomer extends JFrame implements ActionListener {
     JLabel l1, l2, l3, l4, l5, l6, l7, l8, l11;
@@ -134,8 +132,8 @@ public class NewCustomer extends JFrame implements ActionListener {
 
             try {
                 Conn c1 = new Conn();
-                c1.s.executeUpdate(stmnt1);
-                c1.s.executeUpdate(stmnt2);
+                c1.statement.executeUpdate(stmnt1);
+                c1.statement.executeUpdate(stmnt2);
                 JOptionPane.showMessageDialog(null,"Customer details have been added successfully");
                 this.setVisible(false);
                 new MeterInfo(meter).setVisible(true);

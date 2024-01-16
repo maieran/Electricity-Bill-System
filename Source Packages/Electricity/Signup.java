@@ -136,7 +136,7 @@ public class Signup extends JFrame implements ActionListener {
                     str = "update login set username = '"+username+"', name = '"+name+"', password = '"+password+"', user = '"+user+"' where meter_no = '"+t4.getText()+"'";
                 }
 
-                c.s.executeUpdate(str);
+                c.statement.executeUpdate(str);
                 JOptionPane.showMessageDialog(null, "Account Created Successfully");
                 this.setVisible(false);
                 new Login().setVisible(true);

@@ -76,7 +76,7 @@ public class ViewInformation extends JFrame implements ActionListener{
 
         try{
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from customer where meter = '"+meter+"'");
+            ResultSet rs = c.statement.executeQuery("select * from customer where meter = '"+meter+"'");
             while(rs.next()){
                 l11.setText(rs.getString(1));
                 l12.setText(rs.getString(2));

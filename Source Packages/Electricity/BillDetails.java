@@ -1,7 +1,6 @@
 package Electricity;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
 import net.proteanit.sql.DbUtils;
@@ -24,7 +23,7 @@ public class BillDetails extends JFrame{
         try{
             Conn c  = new Conn();
             String s1 = "select * from bill where meter = " + meter;
-            ResultSet rs  = c.s.executeQuery(s1);
+            ResultSet rs  = c.statement.executeQuery(s1);
 
             t1.setModel(DbUtils.resultSetToTableModel(rs));
 
