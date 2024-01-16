@@ -1,6 +1,10 @@
 package Electricity;
 
-import javax.sound.midi.SysexMessage;
+import Electricity.Cryptography.AesCryptography;
+import Electricity.Cryptography.KeyGenerator;
+
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,6 +14,7 @@ import java.sql.*;
 public class Conn{
     Connection connection;
     Statement statement;
+
     public Conn(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -22,7 +27,13 @@ public class Conn{
                 String rootUser = credentials[0];
                 String password = credentials[1];
 
-                connection = DriverManager.getConnection("jdbc:mysql:///ebs",rootUser, password);
+                // AES security
+                SecretKey key = KeyGenerator.getKeyFromPassword(rootUser);
+                IvParameterSpec IV = KeyGenerator.generateIv();
+                String encryptedPassword = AesCryptography.encrypt(password, key, IV);
+                String decryptedPassword = AesCryptography.decrypt(encryptedPassword, key, IV);
+
+                connection = DriverManager.getConnection("jdbc:mysql:///ebs", rootUser, decryptedPassword);
                 statement = connection.createStatement();
             } else {
                 System.out.println("Error reading credentials from property file");
