@@ -108,7 +108,7 @@ public class UpdateInformation extends JFrame implements ActionListener{
             }
         }catch(Exception e){}
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/update.jpg"));
+        ImageIcon i1 = new ImageIcon("icon/update.jpg");
         Image i2  = i1.getImage().getScaledInstance(400, 300, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l8  = new JLabel(i3);

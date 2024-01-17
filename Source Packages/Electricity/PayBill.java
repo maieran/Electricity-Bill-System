@@ -130,7 +130,7 @@ public class PayBill extends JFrame implements ActionListener{
         b2.setBackground(Color.BLACK);
         b2.setForeground(Color.WHITE);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bill.png"));
+        ImageIcon i1 = new ImageIcon("icon/bill.png");
         Image i2 = i1.getImage().getScaledInstance(600, 300,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l21 = new JLabel(i3);

@@ -5,9 +5,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.net.URI;
 
 public class Project extends JFrame implements ActionListener {
     String meter;
+    String os = System.getProperty("os.name").toLowerCase();
 
     public Project(String meter, String person) {
         super("Electricity Billing System");
@@ -266,15 +269,44 @@ public class Project extends JFrame implements ActionListener {
 
         }else if(msg.equals("Notepad")){
             try{
-                Runtime.getRuntime().exec("notepad.exe");
+                if (os.contains("win")) {
+                    try {
+                        Runtime.getRuntime().exec("notepad.exe");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else if (os.contains("mac")) {
+                    String[] cmdOpenTextEditorForMac = {"open", "-a", "TextEdit"};
+                    Runtime.getRuntime().exec(cmdOpenTextEditorForMac);
+                } else if (os.contains("nix") || (os.contains("nux"))) {
+                    String[] cmdOpenTextEditorForMac = {"open", "-a", "gedit"};
+                    Runtime.getRuntime().exec(cmdOpenTextEditorForMac);
+                } else {
+                    System.out.println("Unsupported operating system");
+                }
             }catch(Exception e){ }
-        }else if(msg.equals("Calculator")){
+        } else if(msg.equals("Calculator")){
             try{
-                Runtime.getRuntime().exec("calc.exe");
+                if (os.contains("win")) {
+                    Runtime.getRuntime().exec("calc.exe");
+                } else if (os.contains("nix") || os.contains("nux") || os.contains("mac")) {
+                    String[] cmdOpenCalculator = {"open", "-a", "Calculator"};
+                    Runtime.getRuntime().exec(cmdOpenCalculator);
+                } else {
+                    System.out.println("Unsupported operating system");
+                }
+
             }catch(Exception e){ }
         }else if(msg.equals("Web Browser")){
             try{
-                Runtime.getRuntime().exec("/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --kiosk");
+                if (os.contains("win")) {
+                    Runtime.getRuntime().exec("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
+                } else if (os.contains("nix") || os.contains("nux") || os.contains("mac")) {
+                    String url = "https://www.google.com";
+                    Desktop.getDesktop().browse(new URI(url));
+                } else {
+                    System.out.println("Unsupported operating system");
+                }
             }catch(Exception e){ }
         }else if(msg.equals("Logout")){
             this.setVisible(false);

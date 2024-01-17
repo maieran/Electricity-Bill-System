@@ -99,13 +99,10 @@ public class CalculateBill extends JFrame implements ActionListener{
         b2 = new JButton("Cancel");
         b2.setBounds(230, 350, 100, 25);
 
-        b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.WHITE);
+        b1.setForeground(Color.BLACK);
+        b2.setForeground(Color.BLACK);
 
-        b2.setBackground(Color.BLACK);
-        b2.setForeground(Color.WHITE);
-
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/hicon2.jpg"));
+        ImageIcon i1 = new ImageIcon("icon/hicon2.jpg");
         Image i2 = i1.getImage().getScaledInstance(180, 270,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         l4 = new JLabel(i3);

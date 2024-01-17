@@ -96,7 +96,7 @@ public class ViewInformation extends JFrame implements ActionListener{
         b1.addActionListener(this);
         add(b1);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/viewcustomer.jpg"));
+        ImageIcon i1 = new ImageIcon("icon/viewcustomer.jpg");
         Image i2 = i1.getImage().getScaledInstance(600, 300, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l8  = new JLabel(i3);
