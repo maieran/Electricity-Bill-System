@@ -80,15 +80,13 @@ public class UpdateInformation extends JFrame implements ActionListener{
         add(t5);
 
         b1 = new JButton("Update");
-        b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.WHITE);
+        b1.setForeground(Color.BLACK);
         b1.setBounds(70, 360, 100, 25);
         b1.addActionListener(this);
         add(b1);
 
         b2 = new JButton("Back");
-        b2.setBackground(Color.BLACK);
-        b2.setForeground(Color.WHITE);
+        b2.setForeground(Color.BLACK);
         b2.setBounds(230, 360, 100, 25);
         b2.addActionListener(this);
         add(b2);

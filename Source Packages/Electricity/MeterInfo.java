@@ -95,10 +95,7 @@ public class MeterInfo extends JFrame implements ActionListener {
         b2 = new JButton("Cancel");
         b2.setBounds(250, 390, 100, 25);
 
-        //b1.setBackground(Color.BLACK);
         b1.setForeground(Color.BLACK);
-
-        //b2.setBackground(Color.BLACK);
         b2.setForeground(Color.BLACK);
 
         panel.add(b1);

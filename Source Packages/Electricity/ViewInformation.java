@@ -90,8 +90,7 @@ public class ViewInformation extends JFrame implements ActionListener{
         }catch(Exception e){}
 
         b1 = new JButton("Back");
-        b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.WHITE);
+        b1.setForeground(Color.BLACK);
         b1.setBounds(350, 340, 100, 25);
         b1.addActionListener(this);
         add(b1);
